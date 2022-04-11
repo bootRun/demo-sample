@@ -30,6 +30,10 @@ public class DbTest {
             preparedStatement.setString(1, "北京市");
             //执行查询，查询出结果。
             resultSet=preparedStatement.executeQuery();
+
+
+            connection.commit();
+
             while(resultSet.next()){
                 System.out.println("用户名是："+resultSet.getString("username")+"\n"+"性别是："+resultSet.getString(4));
             }
